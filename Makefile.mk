@@ -1,3 +1,5 @@
+CC = gcc
+
 checkers : consttypes.o functions.o main.o
 	cc -o checkers consttypes.o functions.o main.o
 
@@ -11,4 +13,4 @@ functions.o : functions.c consttypes.h functions.h
 
 .PHONY : clean
 clean :
-	rm checkers consttypes.o functions.o main.o
+	del checkers.exe consttypes.o functions.o main.o
