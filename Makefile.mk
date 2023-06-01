@@ -11,4 +11,4 @@ functions.o : functions.c consttypes.h functions.h
 
 .PHONY : clean
 clean :
-	rm edit consttypes.o functions.o main.o
+	rm checkers consttypes.o functions.o main.o
