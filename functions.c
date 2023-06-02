@@ -39,45 +39,36 @@ void fill_print_initial(board_t* board) {
 }
 
 // convert column coordinate character position into column number
+// offset from A + 1 to give col number
 int char_to_col(char col) { 
-	int ascii_value;
-	ascii_value = (int) col;
-	return ascii_value - ASCII_A + 1; // offset from A + 1 to give col #
-}
-
+	int ascii_value = (int) col;
+	return ascii_value - ASCII_A + 1;}
 // convert row coordinate character position into row number
+// offset from 1 + 1 to give row number
 int char_to_row(char row) { 
-	int ascii_value;
-	ascii_value = (int) row;
-	return ascii_value - ASCII_1 + 1; // offset from 1 + 1 to give row #
-}
-
+	int ascii_value = (int) row;
+	return ascii_value - ASCII_1 + 1;}
 // reverse char_to_col
-char col_to_char(int col) {
-	return (char) (ASCII_A + col - 1);
-}
-
+char col_to_char(int col) {return (char) (ASCII_A + col - 1);}
 // reverse char_to_row
-char row_to_char(int row) {
-	return (char) (ASCII_1 + row - 1);
-}
+char row_to_char(int row) {return (char) (ASCII_1 + row - 1);}
 
 // print a nice visual representation of the board given a board_t input
-void print_board(board_t board_input) {
+void print_board(board_t* board_input) {
 	printf("     A   B   C   D   E   F   G   H"); 
 	// note: main loop iterating through board row, sub loop iterates column
 		// hence switched around iterating variables for clarity
-	for (int j=0; j<BOARD_SIZE; j++) { 
-		for (int i=0; i<BOARD_SIZE; i++) { 
+	for (int j=0; j<BOARD_SIZE; j++) {//row
+		for (int i=0; i<BOARD_SIZE; i++) {//column
 			if (i==0) { 
 				printf("\n   +---+---+---+---+---+---+---+---+\n");
 				printf(" %d |", j + 1);
 			}
-			if (board_input[i][j] == CELL_EMPTY) {
+			if ((*board_input)[i][j] == CELL_EMPTY) {
 				printf(" . |");
 			}
 			else {
-				printf(" %c |", board_input[i][j]);
+				printf(" %c |", (*board_input)[i][j]);
 			}
 		}
 	}

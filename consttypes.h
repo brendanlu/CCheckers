@@ -16,10 +16,8 @@
 #define COMP_ACTIONS        10      // number of computed actions
 
 typedef unsigned char board_t[BOARD_SIZE][BOARD_SIZE];  
-	// board type to store board data
-	// note 1: I have used it as [column][row]
+	// Store board data, use Fortran-syle column major indexing to match the move names [column][row]
 	// note 2: I have use '0' to represent empty square
-
 
 #define CELL_EMPTY               '0'
 #define END_ROW_BLACK            '1'

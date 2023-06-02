@@ -7,14 +7,12 @@
 #include "consttypes.h"
 #include "functions.h"
 
-/* main function controls all the action -------------------------------------*/
 int
 main(int argc, char *argv[]) {
-    // YOUR IMPLEMENTATION OF STAGES 0-2
-    // stage 0
     board_t* board = (board_t*)malloc(sizeof(board_t)); // main board pointer
+
     fill_print_initial(board);
-    print_board(*board);
+    print_board(board);
     
     int black_action = 1, action = 1, error; //, board_cost;
     char col1, row1, col2, row2; 
@@ -54,7 +52,7 @@ main(int argc, char *argv[]) {
 		print_move_information(0, black_action, *board, col1, row1, col2, row2, 
 			action);
 		
-		print_board(*board);
+		print_board(board);
 		
 		// change the action to opposite colour, iterate the move counts
 		black_action = !black_action;
@@ -130,7 +128,7 @@ main(int argc, char *argv[]) {
 			(choice_node->move_info)[1][1], 
 			action);
 		
-		print_board(*board);
+		print_board(board);
 		
 		black_action = !black_action;
 		action += 1;

@@ -10,7 +10,7 @@ int char_to_col(char col);
 int char_to_row(char row);
 char col_to_char(int col);
 char row_to_char(int row);
-void print_board(board_t board_input);
+void print_board(board_t* board_input);
 int check_move_error_1_to_5(board_t board_input, 
 	char col1, char row1, char col2, char row2, int black_action);
 int outside_of_board(char col, char row);
